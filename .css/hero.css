@@ -1,0 +1,6 @@
+#goianapolis{
+    color: var(--accent);
+}
+#goianapolis:hover{
+    color: var(--wood-lt)
+}
