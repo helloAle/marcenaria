@@ -73,10 +73,10 @@
             <p class="section-label">Quem somos</p>
             <h2 class="section-title">Tradição e <em>excelência</em> em marcenaria</h2>
             <p class="section-text">
-              A Arquimedes Móveis Planejados nasceu da paixão pela madeira e pelo trabalho bem feito. Desde a nossa fundação, combinamos técnicas tradicionais de marcenaria com tecnologia moderna para entregar móveis que encantam e duram.
+              A Arquimedes Móveis Planejados nasceu da paixão pela madeira, pelo design e pelo trabalho bem feito. Desde a nossa fundação, unimos a tradição da marcenaria artesanal à tecnologia moderna para criar móveis planejados que encantam, valorizam os ambientes e oferecem durabilidade.
             </p>
             <p class="section-text mt-3">
-              Nossa equipe de marceneiros especializados acompanha cada projeto do esboço à instalação, garantindo que cada detalhe reflita a personalidade e as necessidades do cliente.
+              Cada projeto é acompanhado de perto por um marceneiro especializado, desde o primeiro esboço até a instalação final, garantindo atenção aos mínimos detalhes. Nosso compromisso é transformar ideias em ambientes únicos, refletindo a personalidade, o estilo e as necessidades de cada cliente.
             </p>
             <div class="stat-row">
               <div class="stat">
@@ -160,6 +160,8 @@
           <div class="gallery-cell"><img src="./assets/img/img005.jpg" alt=""></div>
           <div class="gallery-cell"><img src="./assets/img/img006.jpg" alt=""></div>
           <div class="gallery-cell"><img src="./assets/img/img007.jpg" alt=""></div>
+          <div class="gallery-cell"><img src="./assets/img/img003.jpeg" alt=""></div>
+          <div class="gallery-cell"><img src="./assets/img/img003.jpeg" alt=""></div>
         </div>
         <p class="gallery-note">* Substitua cada célula por uma tag &lt;img src="sua-foto.jpg" alt="descrição"&gt; dentro de .gallery-cell</p>
       </div>
@@ -282,5 +284,17 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script>
+      const navbar = document.querySelector('.navbar');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 60) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+    </script>
   </body>
 </html>
