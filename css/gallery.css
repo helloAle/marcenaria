@@ -143,7 +143,7 @@
 }
 
 /* Override the first/last span rules from style.css only when they're visible */
-.gallery-grid > *:first-child:not(.hidden) {
+/* .gallery-grid > *:first-child:not(.hidden) {
   grid-column: span 2;
   grid-row: span 2;
 }
@@ -151,7 +151,7 @@
 .gallery-grid > *:nth-last-child(2):not(.hidden) {
   grid-column: span 2;
   grid-row: span 2;
-}
+} */
 
 /* ?? Cell hidden/visible state ?????????????? */
 .gallery-cell {
@@ -167,9 +167,9 @@
     transform 0.3s ease;
 }
 
-.gallery-cell:first-child {
+/* .gallery-cell:first-child {
   aspect-ratio: unset;
-}
+} */
 
 .gallery-cell img {
   width: 100%;
@@ -270,15 +270,15 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .gallery-grid > *:first-child:not(.hidden) {
+  /* .gallery-grid > *:first-child:not(.hidden) {
     grid-column: span 2;
     grid-row: span 1;
-  }
+  } */
 
-  .gallery-grid > *:nth-last-child(2):not(.hidden) {
+  /* .gallery-grid > *:nth-last-child(2):not(.hidden) {
     grid-column: span 2;
     grid-row: span 1;
-  }
+  } */
 
   .gallery-active-label {
     flex-direction: column;
