@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/hero.css">
   <link rel="stylesheet" href="./css/popup.css">
+  <link rel="stylesheet" href="./css/gallery.css">
   <title>Arquimedes Móveis Planejados</title>
 </head>
 
@@ -158,31 +159,100 @@
     <div class="container">
       <p class="section-label">Portfólio</p>
       <h2 class="section-title">Nossa <em>galeria</em></h2>
-      <div class="gallery-grid">
-        <div class="gallery-cell"><img src="./assets/img/fachada.jpeg" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/img7.jpeg" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/img1.JPG" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/img3.JPG" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/img5.jpeg" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/img6.jpeg" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/img001.jpg" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/img002.jpg" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/img003.jpg" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/img004.jpg" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/img005.jpg" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/img006.jpg" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/img007.jpg" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/001.jpeg" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/002.jpeg" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/003.jpeg" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/004.jpeg" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/005.jpeg" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/006.jpeg" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/007.jpeg" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/008.jpeg" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/009.jpeg" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/img003.jpeg" alt=""></div>
-        <div class="gallery-cell"><img src="./assets/img/img003.jpeg" alt=""></div>
+
+      <!-- CATEGORY CARDS -->
+      <div class="gallery-categories" role="tablist" aria-label="Categorias da galeria">
+        <button class="gallery-cat-card active" data-category="todos" role="tab" aria-selected="true">
+          <span class="cat-icon">◈</span>
+          <span class="cat-name">Todos</span>
+          <span class="cat-line"></span>
+        </button>
+        <button class="gallery-cat-card" data-category="quartos" role="tab" aria-selected="false">
+          <span class="cat-icon">🛏</span>
+          <span class="cat-name">Quartos</span>
+          <span class="cat-line"></span>
+        </button>
+        <button class="gallery-cat-card" data-category="cozinhas" role="tab" aria-selected="false">
+          <span class="cat-icon">🍳</span>
+          <span class="cat-name">Cozinhas</span>
+          <span class="cat-line"></span>
+        </button>
+        <button class="gallery-cat-card" data-category="escritorios" role="tab" aria-selected="false">
+          <span class="cat-icon">🏢</span>
+          <span class="cat-name">Escritórios</span>
+          <span class="cat-line"></span>
+        </button>
+        <button class="gallery-cat-card" data-category="salas" role="tab" aria-selected="false">
+          <span class="cat-icon">🛋</span>
+          <span class="cat-name">Salas</span>
+          <span class="cat-line"></span>
+        </button>
+        <button class="gallery-cat-card" data-category="banheiros" role="tab" aria-selected="false">
+          <span class="cat-icon">🚿</span>
+          <span class="cat-name">Banheiros</span>
+          <span class="cat-line"></span>
+        </button>
+        <button class="gallery-cat-card" data-category="gourmet" role="tab" aria-selected="false">
+          <span class="cat-icon">🔥</span>
+          <span class="cat-name">Área Gourmet</span>
+          <span class="cat-line"></span>
+        </button>
+        <button class="gallery-cat-card" data-category="paineis" role="tab" aria-selected="false">
+          <span class="cat-icon">📺</span>
+          <span class="cat-name">Painéis / TV</span>
+          <span class="cat-line"></span>
+        </button>
+        <button class="gallery-cat-card" data-category="closets" role="tab" aria-selected="false">
+          <span class="cat-icon">👔</span>
+          <span class="cat-name">Closets</span>
+          <span class="cat-line"></span>
+        </button>
+      </div>
+
+      <!-- ACTIVE CATEGORY LABEL -->
+      <div class="gallery-active-label" aria-live="polite">
+        <span id="active-cat-text">Todos os projetos</span>
+        <span id="active-cat-count" class="gallery-count"></span>
+      </div>
+
+      <!-- GALLERY GRID (filterable) -->
+      <!--
+        Para categorizar suas imagens, adicione o atributo data-category ao div.gallery-cell.
+        Exemplo: <div class="gallery-cell" data-category="quartos cozinhas">
+        Uma imagem pode pertencer a mais de uma categoria, separando por espaço.
+        Categorias disponíveis: quartos | cozinhas | escritorios | salas | banheiros | gourmet | paineis | closets
+      -->
+      <div class="gallery-grid" id="gallery-grid">
+        <div class="gallery-cell" data-category="quartos"><img src="./assets/img/fachada.jpeg" alt="Quarto planejado"></div>
+        <div class="gallery-cell" data-category="cozinhas"><img src="./assets/img/img7.jpeg" alt="Cozinha sob medida"></div>
+        <div class="gallery-cell" data-category="salas"><img src="./assets/img/img1.JPG" alt="Sala planejada"></div>
+        <div class="gallery-cell" data-category="quartos"><img src="./assets/img/img3.JPG" alt="Quarto planejado"></div>
+        <div class="gallery-cell" data-category="paineis"><img src="./assets/img/img5.jpeg" alt="Painel de TV"></div>
+        <div class="gallery-cell" data-category="cozinhas"><img src="./assets/img/img6.jpeg" alt="Cozinha planejada"></div>
+        <div class="gallery-cell" data-category="escritorios"><img src="./assets/img/img001.jpg" alt="Escritório planejado"></div>
+        <div class="gallery-cell" data-category="salas"><img src="./assets/img/img002.jpg" alt="Sala de estar"></div>
+        <div class="gallery-cell" data-category="closets"><img src="./assets/img/img003.jpg" alt="Closet planejado"></div>
+        <div class="gallery-cell" data-category="banheiros"><img src="./assets/img/img004.jpg" alt="Banheiro planejado"></div>
+        <div class="gallery-cell" data-category="quartos"><img src="./assets/img/img005.jpg" alt="Dormitório planejado"></div>
+        <div class="gallery-cell" data-category="gourmet"><img src="./assets/img/img006.jpg" alt="Área gourmet"></div>
+        <div class="gallery-cell" data-category="paineis"><img src="./assets/img/img007.jpg" alt="Painel TV sala"></div>
+        <div class="gallery-cell" data-category="cozinhas"><img src="./assets/img/001.jpeg" alt="Cozinha americana"></div>
+        <div class="gallery-cell" data-category="closets"><img src="./assets/img/002.jpeg" alt="Closet feminino"></div>
+        <div class="gallery-cell" data-category="quartos"><img src="./assets/img/003.jpeg" alt="Quarto infantil"></div>
+        <div class="gallery-cell" data-category="banheiros"><img src="./assets/img/004.jpeg" alt="Gabinete banheiro"></div>
+        <div class="gallery-cell" data-category="salas"><img src="./assets/img/005.jpeg" alt="Estante sala"></div>
+        <div class="gallery-cell" data-category="gourmet"><img src="./assets/img/006.jpeg" alt="Churrasqueira gourmet"></div>
+        <div class="gallery-cell" data-category="escritorios"><img src="./assets/img/007.jpeg" alt="Home office"></div>
+        <div class="gallery-cell" data-category="paineis"><img src="./assets/img/008.jpeg" alt="Painel ripado"></div>
+        <div class="gallery-cell" data-category="salas"><img src="./assets/img/009.jpeg" alt="Aparador sala"></div>
+        <div class="gallery-cell" data-category="closets"><img src="./assets/img/img003.jpeg" alt="Closet planejado"></div>
+        <div class="gallery-cell" data-category="cozinhas"><img src="./assets/img/img003.jpeg" alt="Armário cozinha"></div>
+      </div>
+
+      <!-- EMPTY STATE -->
+      <div class="gallery-empty" id="gallery-empty" style="display:none;">
+        <span>Nenhuma imagem nesta categoria ainda.</span>
+        <small>Em breve novos projetos serão adicionados aqui.</small>
       </div>
     </div>
   </section>
@@ -296,7 +366,7 @@
         <div class="col-md-6 mb-3 mb-md-0">
           <span class="footer-brand">Arquimedes Móveis Planejados</span>
           Feito com madeira de verdade e muito cuidado.<br>
-          - 2026 Arquimedes Móveis Planejados. Todos os direitos reservados.
+          © 2026 Arquimedes Móveis Planejados. Todos os direitos reservados.
         </div>
         <div class="col-md-6 text-md-end">
           <div class="footer-links justify-content-md-end">
@@ -320,6 +390,7 @@
     crossorigin="anonymous"></script>
 
   <script>
+    // Navbar scroll
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 60);
@@ -333,45 +404,121 @@
   </div>
 
   <script>
+    // ── LIGHTBOX ──────────────────────────────────────────
     const overlay = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxClose = document.getElementById('lightbox-close');
 
-    // Abre o lightbox ao clicar na imagem
+    function openLightbox(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt;
+      overlay.classList.add('active');
+    }
+
+    function closeLightbox() {
+      overlay.classList.remove('active');
+    }
+
     document.querySelectorAll('.gallery-cell img').forEach(img => {
       img.style.cursor = 'zoom-in';
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        overlay.classList.add('active');
-      });
+      img.addEventListener('click', () => openLightbox(img.src, img.alt));
     });
 
-    // Fecha ao clicar no botão X
-    lightboxClose.addEventListener('click', () => {
-      overlay.classList.remove('active');
-    });
-
-    // Fecha ao clicar no fundo
+    lightboxClose.addEventListener('click', closeLightbox);
     overlay.addEventListener('click', (e) => {
-      if (e.target !== lightboxImg && e.target !== lightboxClose) {
-        overlay.classList.remove('active');
-      }
+      if (e.target !== lightboxImg && e.target !== lightboxClose) closeLightbox();
     });
-
-    // Fecha com ESC
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') overlay.classList.remove('active');
+      if (e.key === 'Escape') closeLightbox();
     });
 
-    // Envio do formulário
+    // ── GALLERY FILTER ────────────────────────────────────
+    const CATEGORY_LABELS = {
+      todos:       'Todos os projetos',
+      quartos:     'Quartos',
+      cozinhas:    'Cozinhas',
+      escritorios: 'Escritórios',
+      salas:       'Salas',
+      banheiros:   'Banheiros',
+      gourmet:     'Área Gourmet',
+      paineis:     'Painéis / TV',
+      closets:     'Closets'
+    };
+
+    const catCards    = document.querySelectorAll('.gallery-cat-card');
+    const cells       = document.querySelectorAll('.gallery-cell');
+    const gridEl      = document.getElementById('gallery-grid');
+    const emptyEl     = document.getElementById('gallery-empty');
+    const activeTxt   = document.getElementById('active-cat-text');
+    const activeCnt   = document.getElementById('active-cat-count');
+
+    let currentCat = 'todos';
+    let filtering  = false;
+
+    function filterGallery(category) {
+      if (filtering || category === currentCat) return;
+      filtering = true;
+      currentCat = category;
+
+      // Update category cards UI
+      catCards.forEach(card => {
+        const isActive = card.dataset.category === category;
+        card.classList.toggle('active', isActive);
+        card.setAttribute('aria-selected', isActive);
+      });
+
+      // Fade out grid
+      gridEl.classList.add('gallery-transitioning');
+
+      setTimeout(() => {
+        let visibleCount = 0;
+
+        cells.forEach(cell => {
+          const cats = cell.dataset.category ? cell.dataset.category.split(' ') : [];
+          const show = category === 'todos' || cats.includes(category);
+
+          if (show) {
+            cell.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            cell.classList.add('hidden');
+          }
+        });
+
+        // Update label
+        activeTxt.textContent = CATEGORY_LABELS[category] || category;
+        activeCnt.textContent = visibleCount > 0 ? `${visibleCount} projeto${visibleCount !== 1 ? 's' : ''}` : '';
+
+        // Show/hide empty state
+        emptyEl.style.display = visibleCount === 0 ? 'flex' : 'none';
+        gridEl.style.display  = visibleCount === 0 ? 'none'  : 'grid';
+
+        // Fade back in
+        gridEl.classList.remove('gallery-transitioning');
+        gridEl.classList.add('gallery-revealing');
+
+        setTimeout(() => {
+          gridEl.classList.remove('gallery-revealing');
+          filtering = false;
+        }, 400);
+
+      }, 280);
+    }
+
+    catCards.forEach(card => {
+      card.addEventListener('click', () => filterGallery(card.dataset.category));
+    });
+
+    // Initialize count
+    activeCnt.textContent = `${cells.length} projetos`;
+
+    // ── FORM ──────────────────────────────────────────────
     document.getElementById('message-mail').addEventListener('submit', function (e) {
       e.preventDefault();
       const form = this;
-      const data = new FormData(form);
       fetch(form.action, {
         method: 'POST',
-        body: data,
+        body: new FormData(form),
         headers: { 'Accept': 'application/json' }
       }).then(() => {
         form.reset();
